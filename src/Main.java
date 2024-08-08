@@ -1,14 +1,18 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("Hello world!");
+        System.out.println("Hello world!");
 
         Date teste1 = new Date();
 
-        System.out.print(teste1.toString());
+        System.out.println(teste1.toString());
+
+        System.out.println(Operacoes.contador(3,7));
 
         // tipo nome = valor;
         int idade = 27;
@@ -27,9 +31,31 @@ public class Main {
 
         // Condicionais if e ternário
         if(idade >= 18){
-            System.out.print("Maior de idade");
+            System.out.println("Maior de idade");
         } else {
-            System.out.print("Menor de idade");
+            System.out.println("Menor de idade");
+        }
+
+        char nota2 = 'B';
+        switch (nota2) {
+            case 'A':
+                System.out.println("Excelente");
+                break;
+            case 'B':
+                System.out.println("Bom");
+                break;
+            case 'C':
+                System.out.println("Regular");
+                break;
+            case 'D':
+                System.out.println("Ruim");
+                break;
+            case 'F':
+                System.out.println("Reprovado");
+                break;
+            default:
+                System.out.println("Nota inválida");
+                break;
         }
 
         int numero = 7;
@@ -60,6 +86,24 @@ public class Main {
         while(indice < 3){
             System.out.println("While print");
             indice++;
+        }
+
+        int n, s = 0;
+        String resp;
+        Scanner teclado = new Scanner(System.in);
+        do {
+            System.out.print("Digite um número: ");
+            n = teclado.nextInt();
+            s += n;
+            System.out.print("Deseja contitnuar? [S/N] ");
+            resp = teclado.next();
+        } while (resp.equals("S"));
+        System.out.println("A soma de todos valores é " + s);
+
+        double v[] = {3.5, 2.75, 9, -4.5};
+        Arrays.sort(v);
+        for(double valor: v){
+            System.out.print(valor + " ");
         }
 
         // Casting
